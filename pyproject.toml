@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nowolf"
+version = "0.1.0.dev0"
+description = "A local LLM code reviewer"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Bradley Hewitt" }]
+dependencies = ["typer>=0.12"]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "mypy", "pre-commit"]
+
+[project.scripts]
+nowolf = "nowolf.cli:app"
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+strict = true
